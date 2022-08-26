@@ -1,0 +1,227 @@
+select  
+
+--BIRTH SEX
+case when "Birth_Sex"=1 then 'M'
+when "Birth_Sex"=2 then 'F'
+else 'other' End Birth_Sex,
+
+--AGE
+case when "Age"=1 then '18-24'
+when "Age"=2 then '25-29'
+when "Age"=3 then '30-34'
+when "Age"=4 then '35-39'
+when "Age"=5 then '40-44'
+when "Age"=6 then '45-49'
+when "Age"=7 then '50-54'
+when "Age"=8 then '55-59'
+when "Age"=9 then '60-64'
+when "Age"=10 then '65-69'
+when "Age"=11 then '70-74'
+when "Age"=12 then '75-79'
+when "Age"=13 then '80-84'
+when "Age"=14 then 'NaN'
+end Age,
+
+--RACE
+case when "Race"=1 then 'White'
+when "Race"=2 then 'Black'
+when "Race"=3 then 'American Indian/Alaskan Native'
+when "Race"=4 then 'Asian'
+when "Race"=5 then 'Native Hawaiian or other Pacific Islander only, Non-Hispanic'
+when "Race"=6 then 'Other Race Only, Non-Hispanic'
+when "Race" = 7, then 'Multiracial, Non-Hispanic'
+when "Race"=8 then 'Hispanic'
+end Race,
+
+--STATE
+cash when "State"= 2 then 'Alabama'
+when "State"= 4 then 'Alaska'
+when "State"= 5 then 'Arizona'
+when "State"= 6 then 'California'
+when "State"= 8 then 'Colorado'
+when "State"= 9 then 'Connecticut'
+when "State"= 10 then 'Delaware'
+when "State"= 11 then 'District_of_Columbia'
+when "State"= 12 then 'FLorida'
+when "State"= 13 then 'Georgia'
+when "State"= 15 then 'Hawaii'
+when "State"= 16 then 'Idaho'
+when "State"= 17 then 'Illinois'
+when "State"= 18 then 'Indiana'
+when "State"= 19 then 'Iowa'
+when "State"= 20 then 'Kansas'
+when "State"= 21 then 'Kentucky'
+when "State"= 22 then 'Louisiana'
+when "State"= 23 then 'Maine'
+when "State"= 24 then 'Maryland'
+when "State"= 25 then 'Massachusetts'
+when "State"= 26 then 'Michigan'
+when "State"= 27 then 'Minnesota'
+when "State"= 28 then 'Mississippi'
+when "State"= 29 then 'Missouri'
+when "State"= 30 then 'Montana'
+when "State"= 31 then 'Nebraska'
+when "State"= 32 then 'Nevada'
+when "State"= 33 then 'New_Hampshire'
+when "State"= 34 then 'New_Jersey'
+when "State"= 35 then 'New_Mexico'
+when "State"= 36 then 'New_York'
+when "State"= 37 then 'North_Carolina'
+when "State"= 38 then 'North_Dakota'
+when "State"= 39 then 'Ohio'
+when "State"= 40 then 'Oklahoma'
+when "State"= 41 then 'Oregon'
+when "State"= 42 then 'Pennsylvania'
+when "State"= 44 then 'Rhode_Island'
+when "State"= 45 then 'South_Carolina'
+when "State"= 46 then 'South_Dakota'
+when "State"= 47 then 'Tennessee'
+when "State"= 48 then 'Texas'
+when "State"= 49 then 'Utah'
+when "State"= 50 then 'Vermont'
+when "State"= 51 then 'Virginia'
+when "State"= 53 then 'Washington'
+when "State"= 54 then 'West_Virginia'
+when "State"= 55 then 'Wisconsin'
+when "State"= 56 then 'Wyoming'
+when "State"= 66 then 'Guam'
+when "State"= 72 then'Puerto_Rico'
+end "State",
+
+--Metropolitan Y_N
+case when "Metropolitan_y_n" = 1 then 'Metro County'
+when "Metropolitan_y_n" = 2 then 'Non-Metro County'
+end "Metropolitan_y_n",
+case when "Urban_Rural" = 1 then 'Urban'
+when "Urban_Rural" = 2 then 'Rural'
+end "Urban_Rural",
+case when "Overall_Health" = 1 'BETTER/GOOD'
+when "Overall_Health" = 2 'FAIR/POOR'
+when "Overall_Health"= 9 'DROP_THIS_ROW'
+end "Overall_Health",
+case when "Physical_Health"=1 then '0 Days'
+when "Physical_Health"=2 then '1-13 Days'
+when "Physical_Health"=3 then '14+ Days'
+when "Physical_Health"=9 then 'DROP_THIS_ROW'
+end "Physical_Health",
+
+--BMI CDC CATEGORIES
+case when "BMI_CDC_Categories"=1 then 'Underweight'
+when "BMI_CDC_Categories"=2 then 'Normal'
+when "BMI_CDC_Categoies"=3 then 'Overweight'
+else 'DROP_THIS_ROW'
+end "BMI_CDC_Categories",
+
+--Diabetes
+case when "Diabetes"=1 then 'Yes'
+when "Diabetes"=2 then 'Yes, but only Gestational Diabetes'
+when "Diabetes" =3 then 'No'
+when "Diabetes"=4 then 'Borderline Diabetes'
+when "Diabetes"=7 then 'NaN'
+when "Diabetes"=9 then 'refused...DROP_THIS_ROW'
+end "Diabetes",
+
+--Mental Health
+case when "Mental_Health">0 and "Mental_Health"<14 then '1-13 Days'
+when "Mental_Health"=0 then '0 Days'
+when "Mental_Health">13 and "Mental_Health" then '14+ Days'
+when "Mental_Health"=9 then 'DROP_THIS_ROW'
+end "Mental_Health",
+
+--Alcohol Usage
+case when "Alcohol_Usage" = 1 then 'NO'
+when "Alcohol_Usage" = 2 then 'YES'
+when "Alcohol_Usage" = 9 then 'NaN'
+end "Alcohol_Usage",
+
+--Tobacco Usage
+case when "Tobacco_Usage" = 1 then 'NO'
+when "Tobacco_Usage" = 2 then 'YES'
+when "Tobacco_Usage" = 9 then 'NaN'
+end "Tobacco_Usage",
+
+--Asthma_History
+case when "Asthma_History"=1 then 'NO'
+when "Asthma_History"=2 then 'YES'
+when "Asthma_History"=9 then 'NaN'
+end "Asthma_History",
+
+--Kidney_Disease
+case when "Kidney_Disease"=1 then 'YES'
+when "Kidney_Disease"=2 then 'NO'
+when "Kidney_Disease"=7 then 'NaN'
+when "Kidney_Disease"=9 then 'DROP_THIS_ROW'
+end "Kidney_Disease",
+
+--Stroke
+case when "Stroke" = 1 then 'YES'
+when "Stroke"=2 then 'NO'
+when "Stroke"=7 then 'NaN'
+when "Stroke"=9 then 'DROP_THIS_ROW'
+end "Stroke",
+
+--Reported Income
+case when "Reported_Income"=1 then '<$15k'
+when "Reported_Income"=2 then '$15k-$25k'
+when "Reported_Income"=3 then '$25k-$35k'
+when "Reported_Income"=4 then '$35k-$50k'
+when "Reported_Income"=5 then '$50k+'
+when "Reported_Income"=9 then 'NaN'
+end "Reported_Income",
+
+--Educational Level
+case when "Educational_Level"=1 then 'No HS Diploma'
+when "Educational_Level"=2 then 'HS Diploma'
+when "Educational_Level"=3 then 'College/Tech School Attended'
+when "Educational_Level"=4 then 'Graduated College/Tech School'
+when "Educational_Level"=9 then 'NaN'
+end "Educational_Level",
+
+--Avg Hours of Sleep
+case when "Avg_Hours_of_Sleep" = 1 then 1
+when "Avg_Hours_of_Sleep" = 1 then 1
+when "Avg_Hours_of_Sleep" = 2 then 2
+when "Avg_Hours_of_Sleep" = 3 then 3
+when "Avg_Hours_of_Sleep" = 4 then 4
+when "Avg_Hours_of_Sleep" = 5 then 5
+when "Avg_Hours_of_Sleep" = 6 then 6
+when "Avg_Hours_of_Sleep" = 7 then 7
+when "Avg_Hours_of_Sleep" = 8 then 8
+when "Avg_Hours_of_Sleep" = 9 then 9
+when "Avg_Hours_of_Sleep" = 10 then 10
+when "Avg_Hours_of_Sleep" = 11 then 11
+when "Avg_Hours_of_Sleep" = 12 then 12
+when "Avg_Hours_of_Sleep" = 13 then 13
+when "Avg_Hours_of_Sleep" = 14 then 14
+when "Avg_Hours_of_Sleep" = 15 then 15
+when "Avg_Hours_of_Sleep" = 16 then 16
+when "Avg_Hours_of_Sleep" = 17 then 17
+when "Avg_Hours_of_Sleep" = 18 then 18
+when "Avg_Hours_of_Sleep" = 19 then 19
+when "Avg_Hours_of_Sleep" = 20 then 20
+when "Avg_Hours_of_Sleep" = 21 then 21
+when "Avg_Hours_of_Sleep" = 22 then 22
+when "Avg_Hours_of_Sleep" = 23 then 23
+when "Avg_Hours_of_Sleep" = 24 then 24
+else 'DROP_THIS_ROW'
+end "Avg_Hours_of_Sleep",
+
+--Colonoscopy
+case when "Colonoscopy" = 1 then 'Yes, Past 10 Years'
+when "Colonoscopy" = 2 then 'Yes, 10+ Years Ago'
+when "Colonoscopy" = 3 then 'No Colonoscopy'
+else 'NaN'
+end "Colonoscopy",
+
+--Prior Heart Disease
+case when "Prior_Heart_Disease" = 1 then 'Yes, Reported Heart Disease'
+when "Prior_Heart_Disease" = 2 then 'No, Did Not Report Heart Disease'
+else 'NaN'
+end "Prior_Heart_Disease",
+
+--Physical Activity
+case when "Physical_Activity" = 1 then 'Yes, Physical Activities'
+when "Physical_Activity" = 2 then 'No Physical Activities'
+else 'NaN'
+end "Physical_Activity"
+from public."Heart_Disease_22_Full";
