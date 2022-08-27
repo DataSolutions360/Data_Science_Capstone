@@ -71,6 +71,7 @@ BMI, Age, Sex, Physical Activity, Cancer, Ashthma, Race, Drinking, Smoking, Ment
 
 ## Presentation
 
+- Our project presentation is drafted in here [Google SlideShow][https://docs.google.com/presentation/d/1YGsOvHFZg9-QRkvNQFwV-EOQtRx9CBKobDLYu7l_36k/edit?usp=sharing]
 ## Dashboard
 - We used Tableau as a part of our dashboard. Our Tableau analysis can be found here [Tableau Dashboard] 
 - The other part of our dashboard is an interactive webpage using machine learning to calculate a heart disease yes/no. It includes an interactive element, users are able to select data that pertains to them (age, sex, race, smoking, etc.) and click a button that will give the a prediction for heart disease yes/no.\
