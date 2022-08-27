@@ -31,8 +31,10 @@ BMI, Age, Sex, Physical Activity, Cancer, Ashthma, Race, Drinking, Smoking, Ment
 
 ## Tools
 - Creating Database
+    - Jupyter Notebook
     - PostgreSQL
 - Connecting to Database
+    - 
     - Psycopg2
     - SQLAlchemy
 - Analyzing Data
@@ -54,8 +56,8 @@ BMI, Age, Sex, Physical Activity, Cancer, Ashthma, Race, Drinking, Smoking, Ment
 - We also used the Calculated Variables document to decode the SAS codes to get to know our data and what are the likely values for each of the columns. 
 - In the Python code, we used pyreadstat module to read the ".XPT" file 
 - Next we renamed the columns for easier readability
-- After connecting to the Postgres database, we created the dataFrame to a table using df.to_sql().
-- As all the values in the dataset were encoded with SAS codes, we utilized some of the SQL update statements to bring back the actual values of the data to make sense when doing visualizetions.
+- After connecting to the Postgres database, we created the dataFrame to a table(Heart_Disease_22_Full) using df.to_sql().  This copies the python dataframe to a SQL table.
+- As all the values in the dataset were encoded with SAS codes, we utilized some of the SQL update statements('Case When' statements) to bring back the actual values of the data to make sense when doing visualizations.
 - This massaged data is exported to a CSV which is then used by Tableau for visualizations and also by the Machine learning program.
 - Our dataset is labeled, so we can consider Supervised Machine Learning.
 - In the Machine learning python code, target Feature was identified as the HeartDiease column.
@@ -65,7 +67,7 @@ BMI, Age, Sex, Physical Activity, Cancer, Ashthma, Race, Drinking, Smoking, Ment
 - The data was split into training and test data using the train_test_split function. We used the default 75% to 25% split.
 - The data was then scaled using StandardScaler()
 - Logistic regression was used to train the model as we are trying to arrive at a HeartDisease Yes/No answer. So its a classification technique hence Logistic Regression.
-- 
+ 
 
 ## Presentation
 
