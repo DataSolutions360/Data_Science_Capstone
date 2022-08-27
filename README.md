@@ -34,6 +34,7 @@ BMI, Age, Sex, Physical Activity, Cancer, Ashthma, Race, Drinking, Smoking, Ment
     - PostgreSQL
 - Connecting to Database
     - Psycopg2
+    - SQLAlchemy
 - Analyzing Data
     - Pandas
 - Machine Learning
