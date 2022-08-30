@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Heart Condition Prediction Webpage" />
+    <meta name="title" property="og:title" content="Heart Condition Prediction" />
+    <meta property="og:type" content="Webpage" />
+    <meta name="image" property="og:image" content="https://health.clevelandclinic.org/wp-content/uploads/sites/3/2018/08/GettyImages-944106494.jpg" />
+    <meta name="description" property="og:description" content="Heart Condition Prediction Webpage" />
+    <meta name="author" content="Moumita Dhali" />
+    <title>Heart Condition Prediction Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 jumbotron text-center" style="background-image: url('https://health.clevelandclinic.org/wp-content/uploads/sites/3/2018/08/GettyImages-944106494.jpg');
+        background-size: cover; background-position: center; color: white; height: 500px;">
+                    <h1 style="margin-top: 320px;">Heart Condition Prediction Dashboard</h1>
+                    <p>Are you wondering about the condition of your heart? This app will help you to diagnose it!</p>
+                </div>
+            </div>
+                     
+    
+            <div class="row">
+                <div class="col-md-5", style=background:rgb(63,2,71)>
+                    <div><br></div>
+                    <div class="well">
+                        <h4 class="headerclass">Enter the parameters that best describe you and then click the Predict button</h4>
+                        <p>
+                            <form method="POST" action="/" role="form" , name="petform">
+                                <div>
+                                    <!-- Gender Choice -->
+                                    <label for="personGender">Choose your gender:</label>
+                                    <select id="personGender" name="personGender">
+                                    <option value="1">MALE</option>
+                                    <option value="0">FEMALE</option>
+                                    </select>                                    
+                                </div>
+                                <div>
+                                <!-- Age Choice -->                                
+                                <label for="Age">Choose a Age Range:</label>
+                                <select id="Age" name="Age">
+                                <option value="1">18-24</option>
+                                <option value="2">25-29</option>
+                                <option value="3">30-34</option>
+                                <option value="4">35-39</option>
+                                <option value="5">40-44</option>
+                                <option value="6">45-49</option>
+                                <option value="7">50-54</option>
+                                <option value="8">55-59</option> 
+                                <option value="9">60-64</option>
+                                <option value="10">65-69</option>
+                                <option value="11">70-74</option>
+                                <option value="12">75-79</option>                                                                
+                                <option value="13">80 or older</option>                                
+                                </select>
+                                </div>                                
+                                <div>
+                                    <!-- Race Choice -->                                
+                                <label for="Race">What is your Race:</label>
+                                <select id="Race" name="Race">
+                                <option value="3">American Indian/Alaskan Native</option>
+                                <option value="4">Asian</option>
+                                <option value="2">Black</option>
+                                <option value="8">Hispanic</option>
+                                <option value="5">Native Hawaiian or other Pacific Islander</option>
+                                <option value="1">White</option>
+                                <option value="6">Other Race Only, Non-Hispanic</option>
+                                <option value="7">Multiracial, Non-Hispanic</option>
+                                </select>
+                                </div>
+                                <div>
+                                    <!-- Overall general Health Choice -->
+                                    <label for="Health">How can you define your general health?</label> >
+                                    <select id="Health" name="Health">
+                                    <option value="1">Better or Good</option>
+                                    <option value="0">Fair or Poor</option>
+                                    </select>                                    
+                                </div>
+                                <div>                                
+                                    <!-- Physical Health not good in the last 30 days -->                                
+                                    <label for="healthnotgood">How many days during the past 30 days was your physical health not good? (0-30 days)?</label>
+                                    <select id="healthnotgood" name="healthnotgood">
+                                    <option value="1">0</option>
+                                    <option value="2">1</option>
+                                    <option value="2">2</option>
+                                    <option value="2">3</option>
+                                    <option value="2">4</option>
+                                    <option value="2">5</option>
+                                    <option value="2">6</option>
+                                    <option value="2">7</option>
+                                    <option value="2">8</option>
+                                    <option value="2">9</option>
+                                    <option value="2">10</option>
+                                    <option value="2">11</option>
+                                    <option value="2">12</option> 
+                                    <option value="2">13</option>
+                                    <option value="3">14</option>
+                                    <option value="3">15</option>
+                                    <option value="3">16</option>
+                                    <option value="3">17</option>
+                                    <option value="3">18</option>
+                                    <option value="3">19</option>
+                                    <option value="3">20</option>
+                                    <option value="3">21</option>
+                                    <option value="3">22</option>
+                                    <option value="3">23</option>
+                                    <option value="3">24</option>                                                                                               
+                                    <option value="3">25</option>     
+                                    <option value="3">26</option>
+                                    <option value="3">27</option>
+                                    <option value="3">28</option>
+                                    <option value="3">29</option>                                                                                               
+                                    <option value="3">30</option>                                                                     
+                                    </select>
+                                </div>
+                                <div>                                
+                                    <!--BMI Choice-->                                
+                                    <label for="BMI">BMI Category:</label>
+                                    <select id="BMI" name="BMI">
+                                    <option value="2">Normal Weight(18.5<=BMI)<25.0)</option>
+                                    <option value="4">Obese(30.0<=BMI<+Infinity)</option>
+                                    <option value="3">Overweight(25.0<=BMI)<30.0)</option>
+                                    <option value="1">Underweight(BMI)<18.5)</option>
+                                    </select>
+                                 </div>                               
+                                <div>   
+                                    <!-- Diabetes -->                                
+                                    <label for="diabetes">Have you ever had diabetes?</label>
+                                    <select id="diabetes" name="diabetes">
+                                    <option value="1">Yes</option>
+                                    <option value="2">Yes, but only Gestational Diabetes</option>
+                                    <option value="3">No</option>
+                                    <option value="4">Borderline Diabetes</option>
+                                    </select>
+                                </div> 
+                                <div>
+                                    <!-- Health not good in the last 30 days -->                                
+                                    <label for="mhealthnotgood">For how many days during the past 30 days was your mental health not good? (0-30 days)</label>
+                                    <select id="mhealthnotgood" name="mhealthnotgood">
+                                    <option value="1">Zero days when mental health not good</option>
+                                    <option value="2">1-13 days when mental health not good</option>
+                                    <option value="3">14+ days when mental health not good</option>
+                                    </select>                                
+                                </div>
+                                <div>                              
+                                    <!-- Alcohol Drinking -->                                
+                                    <label for="drink">Do you have more than 14 drinks of alcohol (men) or more than 7 (women) in a week?</label>
+                                    <select id="drink" name="drink">
+                                    <option value="1">No</option>
+                                    <option value="0">Yes</option>
+                                    </select>
+                                </div>
+                                <div>                                    
+                                    <!-- Smoke Cigarettes -->                                
+                                    <label for="smoke">Have you smoked at least 100 cigarettes in your entire life (approx. 5 packs)?)</label>
+                                    <select id="smoke" name="smoke">
+                                    <option value="1">No</option>
+                                    <option value="0">Yes</option>
+                                    </select>
+                                </div>  
+                                <div>
+                                    <!-- Asthma -->                                
+                                    <label for="asthma">Do you have asthma?</label>
+                                    <select id="asthma" name="asthma">
+                                    <option value="1">No</option>
+                                    <option value="0">Yes</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <!-- kidney disease -->                                
+                                    <label for="kidney">Do you have kidney disease?</label>
+                                    <select id="kidney" name="kidney">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <!-- Stroke -->                                
+                                    <label for="stroke">Did you have a stroke?</label>
+                                    <select id="stroke" name="stroke">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <!-- Colonscopy -->                                
+                                    <label for="cancer">Did you ever get your colonoscopy done?</label>
+                                    <select id="cancer" name="cancer">
+                                    <option value="1">Yes, in the past ten years</option>
+                                    <option value="2">Yes, ten+ years ago</option>
+                                    <option value="3">Never had one</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <!-- Physical Activity n the last 30 days -->                                
+                                    <label for="physact">Have you been doing physical activity or exercise during the past 30 days other than their regular job?</label>
+                                    <select id="physact" name="physact">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                    </select>
+                                </div> 
+                                <div>
+                                    <!-- Sleep Hours Choice -->                                
+                                <label for="sleephours">How many hours on average do you sleep?</label>
+                                <select id="sleephours" name="sleephours">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option> 
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>                                                                                               
+                                </select>
+                                </div>
+                                <!-- Predict Button -->
+                                <div>
+                                    <input type="submit" value="PREDICT" class="btn btn-default" id="predictButton">
+                                    <!-- <a class="btn btn-primary" id="preictButton" role="button" style="background-color: white; border: none; color: black;">PREDICT</a> -->
+                                    <a class="btn btn-primary" id="resetButton" role="button" style="background-color: grey; border: none; color: white;">Reset</a>
+
+                                </div>
+                            </form>
+                        </p>
+                    </div>
+                </div>
+                <div><br></div>
+                <div class="col-md-7">
+                    <div id="gauge"></div>
+                    <div><br></div>
+                    <div class="container">
+                        <div class="prediction-header p-3 pb-md-4 mx-auto text-center">
+                            <p class="text-info"><b>The probability that you will have a heart disease is :</b>
+                            </p>
+                            <p class="text-primary"><b>{{predict*100}}%</b></p>
+                        </div>
+                    </div>                    
+
+                </div> 
+                <div class="col-md-7">
+                    <div id="barPlot"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div id="bubble"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- <script src="{{ url_for('static', filename='js/plot.js') }}"></script> -->
+    <script src="static/js/plots.js"></script>
+
+    <script>
+        create_gauge_plot("{{predict*10}}")
+        var user = eval('({{ form_reuse | tojson | safe}})')
+        repopulate(user)
+    </script>
+ 
+
+</body>
+
+<!-- <script>
+    function add(predict) {
+        create_gauge_plot("{{predict}}")
+        var user = eval('({{ form_reuse | tojson | safe}})')
+        repopulate(user)
+    }
+</script> -->
+
+
+</html>
