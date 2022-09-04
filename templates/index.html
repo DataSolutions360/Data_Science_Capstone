@@ -80,7 +80,7 @@
                                 </div>
                                 <div>
                                     <!-- Overall general Health Choice -->
-                                    <label for="Health">How can you define your general health?</label> >
+                                    <label for="Health">How can you define your general health?</label> 
                                     <select id="Health" name="Health">
                                     <option value="1">Better or Good</option>
                                     <option value="0">Fair or Poor</option>
@@ -256,7 +256,7 @@
                     <div><br></div>
                     <div class="container">
                         <div class="prediction-header p-3 pb-md-4 mx-auto text-center">
-                            <p class="text-info"><b>The probability that you will have a heart disease is :</b>
+                            <p class="text-info"><b>The probability that you may have heart disease is :</b>
                             </p>
                             <p class="text-primary"><b>{{predict*100}}%</b></p>
                         </div>
@@ -279,11 +279,11 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <!-- <script src="{{ url_for('static', filename='js/plot.js') }}"></script> -->
+    
     <script src="static/js/plots.js"></script>
 
     <script>
-        create_gauge_plot("{{predict*10}}")
+        create_gauge_plot("{{(predict*0.05)*100}}")
         var user = eval('({{ form_reuse | tojson | safe}})')
         repopulate(user)
     </script>
