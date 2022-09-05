@@ -74,7 +74,7 @@ BMI, Age, Sex, Physical Activity, Cancer, Ashthma, Race, Drinking, Smoking, Ment
 - Our project presentation is drafted in here [Google SlideShow][https://docs.google.com/presentation/d/1YGsOvHFZg9-QRkvNQFwV-EOQtRx9CBKobDLYu7l_36k/edit?usp=sharing]
 
 ## Dashboard
-- The link to the  dashboard is here (TBD)
+- The link to the  dashboard is here https://heart-condition-predictor.herokuapp.com/
 
 ## Visualization
 - We used Tableau as a part of our dashboard. Our Tableau analysis can be found here [Tableau Dashboard][https://public.tableau.com/app/profile/mark.vogel/viz/Heart_Disease_Visualizations_CDC_2020/FinalProjectTableau?publish=yes] 
