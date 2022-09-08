@@ -258,7 +258,7 @@
                         <div class="prediction-header p-3 pb-md-4 mx-auto text-center">
                             <p class="text-info"><b>The probability that you may have heart disease is :</b>
                             </p>
-                            <p class="text-primary"><b>{{predict*100}}%</b></p>
+                            <p class="text-primary"><b>{{predict}}%</b></p>
                         </div>
                     </div>                    
 
@@ -283,7 +283,7 @@
     <script src="static/js/plots.js"></script>
 
     <script>
-        create_gauge_plot("{{(predict*0.05)*100}}")
+        create_gauge_plot("{{(predict*0.05)}}")
         var user = eval('({{ form_reuse | tojson | safe}})')
         repopulate(user)
     </script>
@@ -291,13 +291,7 @@
 
 </body>
 
-<!-- <script>
-    function add(predict) {
-        create_gauge_plot("{{predict}}")
-        var user = eval('({{ form_reuse | tojson | safe}})')
-        repopulate(user)
-    }
-</script> -->
+
 
 
 </html>
