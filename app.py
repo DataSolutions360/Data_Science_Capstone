@@ -6,7 +6,7 @@ import pandas as pd
 import joblib
 from sklearn. preprocessing import OneHotEncoder
 
-
+# load the saved model
 with open('saved_model.pkl','rb') as file:
     model = load_p(file)
 encoder = joblib.load('encoder.joblib')
@@ -129,12 +129,12 @@ def home():
             "Stroke": user_Stroke, 
             "Colonoscopy": user_colonoscopy,                                                                              
             "Physical_Activity": user_PhysicalActivity,  
-            "Avg_Hours_of_Sleep": user_sleephours,  
+            "Avg_Hours_of_Sleep": user_sleephours 
         }
 
     print(user_data)
     # return render_template("index.html")
-    return render_template("index.html", predict=prediction, form_reuse=user_data)
+    return render_template("index.html", predict=round(prediction*100, 2), form_reuse=user_data)
     
 if __name__ == "__main__":
     app.run(debug=True)
