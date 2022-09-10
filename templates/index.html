@@ -41,8 +41,8 @@
                                     <!-- Gender Choice -->
                                     <label for="personGender">Choose your gender:</label>
                                     <select id="personGender" name="personGender">
-                                    <option value="1">MALE</option>
                                     <option value="0">FEMALE</option>
+                                    <option value="1">MALE</option>
                                     </select>                                    
                                 </div>
                                 <div>
@@ -242,8 +242,9 @@
                                 <!-- Predict Button -->
                                 <div>
                                     <input type="submit" value="PREDICT" class="btn btn-default" id="predictButton">
+                                    <input type="button" value="Reset" class="btn btn-primary" id="resetButton">
                                     <!-- <a class="btn btn-primary" id="preictButton" role="button" style="background-color: white; border: none; color: black;">PREDICT</a> -->
-                                    <a class="btn btn-primary" id="resetButton" role="button" style="background-color: grey; border: none; color: white;">Reset</a>
+                                    <!-- <a class="btn btn-primary" id="resetButton" role="button" style="background-color: grey; border: none; color: white;">Reset</a> -->
 
                                 </div>
                             </form>
@@ -259,6 +260,7 @@
                             <p class="text-info"><b>The probability that you may have heart disease is :</b>
                             </p>
                             <p class="text-primary"><b>{{predict}}%</b></p>
+                            <p class="text-info"><b>This prediction should only be used for personal use.  Please consult your doctor or health professional for further information.</b></p>
                         </div>
                     </div>                    
 
@@ -280,15 +282,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-    <script src="static/js/plots.js"></script>
+    <script src="../static/js/plots.js"></script>
 
     <script>
-        create_gauge_plot("{{(predict*0.05)}}")
+        create_gauge_plot("{{(predict)}}")
         var user = eval('({{ form_reuse | tojson | safe}})')
         repopulate(user)
     </script>
  
-
 </body>
 
 

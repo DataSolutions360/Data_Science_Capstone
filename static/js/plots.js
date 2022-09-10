@@ -3,27 +3,28 @@
 var gaugePlot = document.getElementById('gauge');
 
 function create_gauge_plot(score) {
+    console.log(score)
     var gaugeData = [{
         domain: { x: [0, 1], y: [0, 1] },
         value: score,
-        title: { text: "<b>Heart Health condition</b>" },
+        title: { text: "<b>Heart Health Predictor</b>" },
         type: "indicator",
         mode: "gauge+number",
+        // mode: "gauge",
         gauge: {
             axis: {
-                range: [null, 5],
+                range: [null, 100],
                 tickmode: "array",
-                tickvals: [0, 1, 2, 3, 4, 5],
-                ticktext: [0, 1, 2, 3, 4, 5]
+                tickwidth: 1,
+                tickcolor: "Black"
             },
             bar: { color: "black" },
             steps: [
-                { range: [4, 5], color: "red" },
-                { range: [3, 4], color: "orange" },
-                { range: [2, 3], color: "yellow" },
-                { range: [1, 2], color: "lime" },
-                { range: [0, 1], color: "green" }
-            ]
+                { range: [0, 20], color: "blue" },
+                { range: [20, 40], color: "green" },
+                { range: [40, 60], color: "yellow" },
+                { range: [60, 80], color: "orange" },
+                { range: [80, 100], color: "red" }]
         }
     }];
 
@@ -35,40 +36,39 @@ function create_gauge_plot(score) {
             yref: 'paper',
             x: 0.5,
             xanchor: 'center',
-            y: -0.2,
+            y: 0,
             yanchor: 'center',
-            text: "The gauge displays your risk level<br>to get a heart disease",
+            text: " ",
             showarrow: false
         }]
     };
-    Plotly.newPlot(gaugePlot, gaugeData, gaugeLayout, { responsive: true });
-
-
-
-}
+    Plotly.newPlot("gauge", gaugeData, gaugeLayout, { responsive: true });}
 
 // Function to display inputs after page has reloaded
 function repopulate(re_input) {
+    console.log("here");
     console.log(re_input);
     // Check if inputs were entered
     if (!(Object.keys(re_input).length === 0 && re_input.constructor === Object)) {
-        document.getElementById("personGender").selectedIndex = re_input.personGender;
-        document.getElementById("Age").selectedIndex = re_input.Age;
-        document.getElementById("Race").selectedIndex = re_input.Race;
-        document.getElementById("Health").selectedIndex = re_input.Health;
-        document.getElementById("healthnotgood").selectedIndex = re_input.healthnotgood;
-        document.getElementById("BMI").selectedIndex = re_input.BMI;
-        document.getElementById("diabetes").selectedIndex = re_input.diabetes;
-        document.getElementById("mhealthnotgood").selectedIndex = re_input.mhealthnotgood;
-        document.getElementById("drink").selectedIndex = re_input.drink;
-        document.getElementById("smoke").selectedIndex = re_input.smoke;
-        document.getElementById("asthma").selectedIndex = re_input.asthma;
-        document.getElementById("kidney").selectedIndex = re_input.kidney;
-        document.getElementById("stroke").selectedIndex = re_input.stroke;
-        document.getElementById("cancer").selectedIndex = re_input.cancer;
-        document.getElementById("physact").selectedIndex = re_input.physact;
-        document.getElementById("sleephours").selectedIndex = re_input.sleephours;
-
+        document.getElementById("personGender").value = re_input.Birth_Sex;
+        document.getElementById("Age").value = re_input.Age;
+        document.getElementById("Race").value = re_input.Race;
+        document.getElementById("Health").value = re_input.Overall_Health;
+        document.getElementById("healthnotgood").value = re_input.Physical_Health;
+        document.getElementById("BMI").value = re_input.BMI_CDC_Categories;
+        document.getElementById("diabetes").value = re_input.Diabetes;
+        document.getElementById("mhealthnotgood").value = re_input.Mental_Health;
+        document.getElementById("drink").value = re_input.Alcohol_Usage;
+        document.getElementById("smoke").value = re_input.Tobacco_Usage;
+        document.getElementById("asthma").value = re_input.Asthma_History;
+        document.getElementById("kidney").value = re_input.Kidney_Disease;
+        document.getElementById("stroke").value = re_input.Stroke;
+        document.getElementById("cancer").value = re_input.Colonoscopy;
+        document.getElementById("physact").value = re_input.Physical_Activity;
+        document.getElementById("sleephours").value = re_input.Avg_Hours_of_Sleep;
+        console.log(re_input.Birth_Sex, re_input.Age,re_input.Race, re_input.Overall_Health,re_input.Physical_Health, re_input.BMI_CDC_Categories,re_input.Diabetes);
+        console.log(re_input.Mental_Health, re_input.Alcohol_Usage,re_input.Tobacco_Usage, re_input.Asthma_History,re_input.Kidney_Disease, re_input.Stroke,re_input.Colonoscopy);
+        console.log(re_input.Physical_Activity, re_input.Avg_Hours_of_Sleep);
     }
 
 };
@@ -79,20 +79,21 @@ document.getElementById("resetButton").onclick = function() { reset() };
 function reset() {
     let zero = 0;
     create_gauge_plot(zero);
-    document.getElementById("personGender").selectedIndex = 0;
-    document.getElementById("Age").selectedIndex = 1;
-    document.getElementById("Race").selectedIndex = 3;
-    document.getElementById("Health").selectedIndex = 0;
-    document.getElementById("healthnotgood").selectedIndex = 1;
-    document.getElementById("BMI").selectedIndex = 1;
-    document.getElementById("diabetes").selectedIndex = 0;
-    document.getElementById("mhealthnotgood").selectedIndex = 1;
-    document.getElementById("drink").selectedIndex = 0;
-    document.getElementById("smoke").selectedIndex = 0;
-    document.getElementById("asthma").selectedIndex = 0;
-    document.getElementById("kidney").selectedIndex = 0;
-    document.getElementById("stroke").selectedIndex = 0;
-    document.getElementById("cancer").selectedIndex = 1;
-    document.getElementById("physact").selectedIndex = 0;
-    document.getElementById("sleephours").selectedIndex = 1;                               
+    document.getElementById("personGender").value = 0;
+    document.getElementById("Age").value = 1;
+    document.getElementById("Race").value = 1;
+    document.getElementById("Health").value = 0;
+    document.getElementById("healthnotgood").value = 1;
+    document.getElementById("BMI").value = 1;
+    document.getElementById("diabetes").value = 1;
+    document.getElementById("mhealthnotgood").value = 1;
+    document.getElementById("drink").value = 0;
+    document.getElementById("smoke").value = 0;
+    document.getElementById("asthma").value = 0;
+    document.getElementById("kidney").value = 0;
+    document.getElementById("stroke").value = 0;
+    document.getElementById("cancer").value = 1;
+    document.getElementById("physact").value = 0;
+    document.getElementById("sleephours").value = 1;  
+                         
 };
