@@ -131,10 +131,13 @@ def home():
             "Physical_Activity": user_PhysicalActivity,  
             "Avg_Hours_of_Sleep": user_sleephours 
         }
+    print("User data")
+
 
     print(user_data)
     # return render_template("index.html")
     return render_template("index.html", predict=round(prediction*100, 2), form_reuse=user_data)
+    # return render_template("about.html", predict=round(prediction*100, 2), form_reuse=user_data)
     
 if __name__ == "__main__":
     app.run(debug=True)
