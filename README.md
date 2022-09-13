@@ -22,7 +22,7 @@ BMI, Age, Sex, Physical Activity, Cancer, Ashthma, Race, Drinking, Smoking, Ment
 - For the sake of our analysis, we reduced the 279 columns to 22 columns
 
 ## Questions we hope to answer with the data
-- How do different cfeatures in the given dataset impact Heart health condition?
+- How do different features in the given dataset impact Heart health condition?
 - Does any Feature have more impact over the other?
  
 
