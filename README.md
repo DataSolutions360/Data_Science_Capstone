@@ -61,7 +61,7 @@ BMI, Age, Sex, Physical Activity, Cancer, Ashthma, Race, Drinking, Smoking, Ment
 - This massaged data is exported to a CSV which is then used by Tableau for visualizations and also by the Machine learning program.
 - Our dataset is labeled, so we can consider Supervised Machine Learning.
 - In the Machine learning python code, target Feature was identified as the HeartDiease column.
-- The rest of teh Features were used to train/test the model.
+- The rest of the Features were used to train/test the model.
 - This data is read and splitted based on categorical and numerical features. 
 - The categorical features were encoded using LabelEncoder().
 - The data was split into training and test data using the train_test_split function. We used the default 75% to 25% split.
